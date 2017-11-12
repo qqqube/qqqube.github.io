@@ -2,7 +2,7 @@
 /* CSS File for Home Page */
 
 body{
-	background-image: url("1.jpg");
+	background-image: url("../images/1.jpg");
 	background-size: 620px 720px;
 }
 #menu {
