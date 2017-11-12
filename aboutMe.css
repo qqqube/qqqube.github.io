@@ -12,6 +12,9 @@ h1 {
 	font-family: "Courier New", Courier, monospace;
 	font-size: 4em;
 }
+mark.arrows {
+	color: #d9b38c;
+}
 h2 {
 	text-align: center;
 	color: #d9b38c;
