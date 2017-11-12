@@ -1,0 +1,95 @@
+
+/* CSS File for About Me Page */
+
+#menu {
+	text-align: center;
+}
+h1 {
+	text-align: center;
+	color: #d9b38c;
+	font-style: italic;
+	font-weight: bold;
+	font-family: "Courier New", Courier, monospace;
+	font-size: 4em;
+}
+h2 {
+	text-align: center;
+	color: #d9b38c;
+	font-style: italic;
+	font-weight: bold;
+	font-family: "Courier New", Courier, monospace;
+	font-size: 3em;
+}
+#Teach {
+	margin-left: 20em;
+	margin-right: 40em;
+	font-family: "Courier New", Courier, monospace;
+}
+#cs61A {
+	float: right;
+	margin-right: 20em;
+}
+#intro {
+	margin-left: 20em;
+	margin-right: 20em;
+	font-family: "Courier New", Courier, monospace;
+}
+#ASUC {
+	float: left;
+	margin-left: 18em;
+}
+#ASUCP {
+	margin-right: 20em;
+	font-family: "Courier New", Courier, monospace;
+}
+#nycRin {
+	display: block;
+	margin: 0 auto;
+	border-radius: 15px 50px 30px;
+}
+#Konviv {
+	float: right;
+	margin-right: 15em;
+}
+#KonvivTxt {
+	margin-left: 20em;
+	font-family: "Courier New", Courier, monospace;
+}
+ul {
+	display: inline-block;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+li a:link {
+	text-decoration-color: none;
+	font-weight: bold;
+	font-size: 1.5em;
+	color: black;
+}
+
+li a:visited{
+	text-decoration-color: none;
+	font-weight: bold;
+	font-size: 1.5em;
+	color: black;
+}
+li a:hover {
+	text-decoration-color: none;
+	font-weight: bold;
+	font-size: 1.7em;
+	color: #660000;
+}
+li a:active {
+	text-decoration-color: none;
+	font-weight: bold;
+	font-size: 1.5em;
+	color: black;
+}
+li {
+	display: inline;
+}
+a {
+	display: inline-block;
+	padding: 25px;
+}
