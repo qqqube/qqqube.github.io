@@ -12,6 +12,9 @@ h1 {
 	font-family: "Courier New", Courier, monospace;
 	font-size: 4em;
 }
+.clearfix {
+	overflow: auto;
+}
 mark {
 	color: #d9b38c;
 	background-color: white;
@@ -29,25 +32,25 @@ h2 {
 	font-size: 3em;
 }
 #Teach {
-	margin-left: 20em;
-	margin-right: 40em;
+	margin-left: 15em;
+	margin-right: 33em;
 	font-family: "Courier New", Courier, monospace;
 }
 #cs61A {
 	float: right;
-	margin-right: 20em;
+	margin-right: 15em;
 }
 #intro {
-	margin-left: 20em;
-	margin-right: 20em;
+	margin-left: 15em;
+	margin-right: 15em;
 	font-family: "Courier New", Courier, monospace;
 }
 #ASUC {
 	float: left;
-	margin-left: 18em;
+	margin-left: 15em;
 }
 #ASUCP {
-	margin-right: 20em;
+	margin-right: 15em;
 	font-family: "Courier New", Courier, monospace;
 }
 #nycRin {
@@ -57,10 +60,10 @@ h2 {
 }
 #Konviv {
 	float: right;
-	margin-right: 15em;
+	margin-right: 11em;
 }
 #KonvivTxt {
-	margin-left: 20em;
+	margin-left: 15em;
 	font-family: "Courier New", Courier, monospace;
 }
 ul {
