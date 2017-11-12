@@ -14,6 +14,7 @@ h1 {
 }
 mark.arrows {
 	color: #d9b38c;
+	background: none;
 }
 h2 {
 	text-align: center;
