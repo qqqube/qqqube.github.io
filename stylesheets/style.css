@@ -3,6 +3,7 @@
 
 body{
 	background-image: url("../images/1.jpg");
+	background-repeat: repeat-x;
 	background-size: 620px 720px;
 }
 #menu {
