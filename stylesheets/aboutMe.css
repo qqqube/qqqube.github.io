@@ -12,9 +12,6 @@ h1 {
 	font-family: "Courier New", Courier, monospace;
 	font-size: 4em;
 }
-.clearfix {
-	overflow: auto;
-}
 mark {
 	color: #d9b38c;
 	background-color: white;
