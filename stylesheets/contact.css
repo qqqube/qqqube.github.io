@@ -1,0 +1,63 @@
+
+/* CSS File for Contact Page */
+
+body {
+	background-image: url(http://img1.liveinternet.ru/images/attach/c/1//60/146/60146306_1276185328_53845815_h123.gif);
+	background-size: cover;
+}
+h1 {
+	padding: 0.00000000000000001em;
+	font-size: 4.5em;
+	font-weight: bold;
+	font-style: italic;
+	text-align: center;
+	color: #d9b38c;
+}
+#icons {
+	text-align: center;
+} 
+#icons ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+#menu {
+	text-align: center;
+}
+#menu ul {
+	display: inline-block;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+#menu li a:link {
+	text-decoration-color: none;
+	font-weight: bold;
+	font-size: 1.5em;
+	color: black;
+}
+#menu li a:visited{
+	text-decoration-color: none;
+	font-weight: bold;
+	font-size: 1.5em;
+	color: black;
+}
+#menu li a:hover {
+	text-decoration-color: none;
+	font-weight: bold;
+	font-size: 1.7em;
+	color: #d9b38c;
+}
+#menu li a:active {
+	text-decoration-color: none;
+	font-weight: bold;
+	font-size: 1.5em;
+	color: black;
+}
+#menu li {
+	display: inline;
+}
+a {
+	display: inline-block;
+	padding: 25px;
+}

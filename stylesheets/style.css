@@ -1,0 +1,64 @@
+
+/* CSS File for Home Page */
+
+body{
+	background-image: url("../images/1.jpg");
+	background-repeat: repeat-x;
+	background-size: 620px 720px;
+}
+#menu {
+	text-align: center;
+}
+h1 {
+	font-size: 8.4em;
+	font-style: bold;
+}
+p{
+	font-size: 2.8em;
+	font-style: italic;
+	color: black;
+}
+ul {
+	display: inline-block;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+li a:link {
+	text-decoration-color: none;
+	font-weight: bold;
+	font-size: 2em;
+	color: black;
+}
+li a:visited{
+	text-decoration-color: none;
+	font-weight: bold;
+	font-size: 2em;
+	color: black;
+}
+li a:hover {
+	text-decoration-color: none;
+	font-weight: bold;
+	font-size: 2.2em;
+	color: #4d004d;
+}
+li a:active {
+	text-decoration-color: none;
+	font-weight: bold;
+	font-size: 2em;
+	color: black;
+}
+li {
+	display: inline;
+}
+a {
+	display: inline-block;
+	padding: 25px;
+}
+h1 {
+	color: black;
+	text-align: center;
+}
+p {
+	text-align: center;
+}
