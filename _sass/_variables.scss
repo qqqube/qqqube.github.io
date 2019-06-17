@@ -33,7 +33,7 @@ $header-font-family         : $sans-serif;
 $caption-font-family        : $serif;
 
 /* type scale */
-$type-size-1                : 2.441em;  // ~39.056px
+$type-size-1                : 3em;  // ~39.056px
 $type-size-2                : 1.953em;  // ~31.248px
 $type-size-3                : 1.563em;  // ~25.008px
 $type-size-4                : 1.25em;   // ~20px
@@ -52,19 +52,20 @@ $dark-gray                  : mix(#000, $gray, 40%);
 $darker-gray                : mix(#000, $gray, 60%);
 $light-gray                 : mix(#fff, $gray, 50%);
 $lighter-gray               : mix(#fff, $gray, 90%);
+$really-dark-blue           : #07252e;
 
-$body-color                 : #fff;
+$body-color                 : #really-dark-blue;
 $background-color           : #fff;
 $code-background-color      : #fafafa;
 $code-background-color-dark : $light-gray;
-$text-color                 : $dark-gray;
-$border-color               : $lighter-gray;
+$text-color                 : $really-dark-blue;
+$border-color               : $really-dark-blue;
 
-$primary-color              : #7a8288;
+$primary-color              : $really-dark-blue;
 $success-color              : #62c462;
 $warning-color              : #f89406;
 $danger-color               : #ee5f5b;
-$info-color                 : #52adc8;
+$info-color                 : #2b07f2;
 
 /* brands */
 $behance-color              : #1769FF;
@@ -91,10 +92,10 @@ $xing-color                 : #006567;
 
 /* links */
 $link-color                 : $info-color;
-$link-color-hover           : mix(#000, $link-color, 25%);
-$link-color-visited         : mix(#fff, $link-color, 25%);
+$link-color-hover           : $info-color;
+$link-color-visited         : $info-color;
 $masthead-link-color        : $primary-color;
-$masthead-link-color-hover  : mix(#000, $primary-color, 25%);
+$masthead-link-color-hover  : $primary-color;
 
 
 /*
