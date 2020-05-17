@@ -1,31 +1,272 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 	<head>
+		<meta charset=utf-8>
 		<title>Lauren Hong</title>
-		<link rel="stylesheet" href="stylesheets/style.css">
 		<link rel="icon" href="images/icon.jpg" href="favicon.ico" />	
+		<style>
+			body { margin: 0; }
+			canvas { width: 100%; height: 100% }
+		</style>
 	</head>
 	<body>
-		<div id="menu">
-			<ul>
-				<li><a href="index.html">Home</a></li>
-				<li><a href="aboutme.html" target=>About Me</a></li>
-				<li><a href="contact.html" target=>Contact</a></li>
-			</ul>
-		</div>
-		<br/>
-		<br/>
-		<br/>
-		<br/>
-		<br/>
-		<br/>
-		<div>
-			<h1> Lauren Hong </h1>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<p>Software Engineer, Student, & Coffee Enthusiast</p>
-		</div>	
+		
+		
+		<script src="three.js-master/build/three.js"></script>
+		
+		<script> 
+
+			
+			const scene = new THREE.Scene();
+			const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+						// FOV (degrees), aspect ratio, near, far clipping planes
+
+			const canvas = document.createElement( 'canvas' );
+			const context = canvas.getContext( 'webgl2' );
+			const renderer = new THREE.WebGLRenderer( { canvas: canvas, context: context } );
+
+			renderer.setSize( window.innerWidth, window.innerHeight);
+			document.body.appendChild(renderer.domElement);
+
+			//  CUBE!  /////////////
+			console.log("cubes are cute");
+			
+			function makeCube(color, x, y) {
+				const cubeGeometry = new THREE.BoxGeometry(1, 1, 1);
+				const cubeMaterial = new THREE.MeshPhongMaterial({color: color});
+				const cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
+				cube.position.x = x;
+				cube.position.y = y;
+				scene.add(cube);
+				return cube;
+			}
+
+
+			const cubes = [makeCube(0xb0e8e8, 1, 0),
+			makeCube(0xb5e5bc, -3, 0),
+			
+			makeCube(0xe5d9b5, -1, 0), makeCube(0xe5c5b5, 3, 0),
+			makeCube(0xe5b5b5, 3, 2), makeCube(0xc9b5e5, 3, -2),
+			makeCube(0xc9b5e5, -1, 2), makeCube(0xb5e5bc, -1, -2),
+			makeCube(0xb0e8e8, 1, 2), makeCube(0xe5d9b5, 1, -2),
+			makeCube(0xe5c5b5, -3, 2), makeCube(0xe5b5b5, -3, -2)
+			];
+
+			//Add Lighting
+			{
+			
+				const color = 0xFFFFFF;
+				const intensity = 0.6;
+				const leftLight = new THREE.DirectionalLight(color, intensity);
+				//light.position.set(-1, 2, 4);
+				leftLight.position.set(-6, 6, 4);
+
+				const rightLight = new THREE.DirectionalLight(color, intensity);
+				rightLight.position.set(6, 6, 4);
+				scene.add(leftLight);
+				scene.add(rightLight);
+			}
+
+			camera.position.z = 12;
+			console.log(camera.position.x);
+			console.log(camera.position.y);
+
+
+			
+			// Line! //////////
+/*
+			const lineMaterial = new THREE.LineBasicMaterial( {
+				color: 0x000000
+			} );
+			const lineGeometry = new THREE.Geometry();
+			lineGeometry.vertices.push(new THREE.Vector3( -10, 0, 0) );
+			lineGeometry.vertices.push(new THREE.Vector3( 0, 10, 0) );
+			lineGeometry.vertices.push(new THREE.Vector3( 10, 0, 0) );
+			const line = new THREE.Line( lineGeometry, lineMaterial);
+
+			scene.add(line);
+
+
+			
+
+			// Load a Duck!
+
+			const loader = new THREE.GLTFLoader();
+
+			loader.load( '../three.js-master/examples/models/gltf/Duck/glTF/Duck.gltf', function ( gltf ) {
+
+						scene.add( gltf.scene );
+
+					}, undefined, function ( error ) {
+
+						console.error( error );
+
+					} );
+
+*/
+
+
+
+			function render(time) {
+				time *= 0.001; //convert to seconds
+
+				
+				cubes.forEach((cube, ndx) => {
+					const speed = 1 + ndx * 0.1;
+
+				// cube3 (3, 0) and cube10 (-3, 2) go to (-1, 4)
+					if (ndx == 10) {
+				
+						const dirX = 2/ Math.sqrt(6.25) ;
+						const dirY = 1.5 / Math.sqrt(6.25);
+
+						if (cube.position.x < -1.5) {
+							cube.position.x += dirX * 0.02;
+						}
+						if (cube.position.y < 4) {
+							cube.position.y += dirY * 0.02;
+						}
+					}
+
+					if (ndx == 3) {
+
+						const dirX = (-3.5) / Math.sqrt(28.25);
+						const dirY = 4/ Math.sqrt(28.25) ;
+
+						if (cube.position.x > -0.5) {
+							cube.position.x += dirX * 0.02;
+						}
+						if (cube.position.y < 4) {
+							cube.position.y += dirY * 0.02;
+						}
+					}
+				// cube11 and cube4 go to (-1, 2)
+					if (ndx == 11) {
+
+						const dirX = 1.5 / Math.sqrt(18.25);
+						const dirY = 4/ Math.sqrt(18.25);
+
+						if (cube.position.x < -1.5) {
+							cube.position.x += dirX * 0.02;
+						}
+						if (cube.position.y < 2) {
+							cube.position.y += dirY * 0.02;
+						}
+
+					}
+
+					if (ndx == 4) {
+
+						const dirX = -1;
+
+						if (cube.position.x > -0.5) {
+							cube.position.x += dirX * 0.02;
+						}
+					
+					}
+
+				//cube 6 goes to (4.5, -2)
+					if (ndx == 6) {
+						const dirX = 5.5/Math.sqrt(46.25) ;
+						const dirY = (-4) / Math.sqrt(46.25);
+
+						if (cube.position.x < 4.5) {
+							cube.position.x += dirX * 0.02;
+						}
+						if (cube.position.y > -2) {
+							cube.position.y += dirY * 0.02;
+						}
+					}
+				//cube5 goes to (5.5, -2)
+					if (ndx == 5) {
+
+						const dirX = 1;
+						if (cube.position.x < 5.5) {
+							cube.position.x += dirX * 0.02;
+						}
+					}
+				//cube2 goes to (1.5, -2)
+					if (ndx == 2) {
+						const dirX = 2.5 / Math.sqrt(10.25) ;
+						const dirY = (-2) / Math.sqrt(10.25);
+
+						if (cube.position.x < 1.5) {
+							cube.position.x += dirX * 0.02;
+						}
+						if (cube.position.y > -2) {
+							cube.position.y += dirY * 0.02;
+						}
+					}
+				//cube9 goes to (2.5, -2)
+					if (ndx == 9) {
+
+						const dirX = 1.5;
+						if (cube.position.x < 2.5) {
+							cube.position.x += dirX * 0.02;
+						}
+					}
+				//cube1 goes to (-0.5, -2)
+					if (ndx == 1) {
+						const dirX = 2.5 / Math.sqrt(10.25) ;
+						const dirY = (-2) / Math.sqrt(10.25) ;
+
+						if (cube.position.x < -0.5) {
+							cube.position.x += dirX * 0.02;
+						}
+						if (cube.position.y > -2) {
+							cube.position.y += dirY * 0.02;
+						}
+
+					}
+
+				//cube7 goes to (-1.5, -2)
+					if (ndx == 7) {
+						const dirX = -1;
+						if (cube.position.x > -1.5) {
+							cube.position.x += dirX * 0.02;
+						}
+					}
+				//cube8 goes to (-1.5, 0) 
+					if (ndx == 8) {
+						const dirX = -2.5 / Math.sqrt(10.25);
+						const dirY = -2 / Math.sqrt(10.25);
+						if (cube.position.x > -1.5) {
+							cube.position.x += dirX * 0.02;
+						}
+						if (cube.position.y > 0) {
+							cube.position.y += dirY * 0.02;
+						}
+					}
+				//cube0 goes to (-0.5, 0)
+					if (ndx == 0) {
+						const dirX = -1;
+						if (cube.position.x > -0.5) {
+							cube.position.x += dirX * 0.02;
+						}
+					}
+				
+
+
+
+					
+					const rot = time*speed;
+					cube.rotation.x = rot;
+					cube.rotation.y = rot;
+					//cube.rotation.z = rot;
+
+					//cube.position.x += speed * 0.01;
+
+				})
+				
+
+
+				renderer.render(scene, camera);
+				requestAnimationFrame( render);
+			}
+			requestAnimationFrame(render);
+
+
+
+		</script>
 	</body>
 </html>
