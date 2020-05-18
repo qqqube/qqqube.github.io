@@ -7,9 +7,46 @@
 		<style>
 			body { margin: 0; }
 			canvas { width: 100%; height: 100% }
+
+			.dropdown {
+			  position: relative;
+			  display: inline-block;
+			}
+			.dropdown-content {
+			  display: none;
+			  position: absolute;
+			  background-color: #ffffff;
+			  min-width: 160px;
+			  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+			  z-index: 1;
+			}
+			.dropdown-content a {
+			  color: black;
+			  padding: 8px 16px 8px 8px;
+			  text-decoration: none;
+			  display: block;
+			}
+
+			.dropdown-content a:hover {background-color: #ddd;}
+
+			.dropdown:hover .dropdown-content {display: block;}
+
+			.dropdown:hover .dropbtn {background-color: #3e8e41;}
 		</style>
+		<div class="dropdown" style="float:right">
+
+			<img border="0" src="images/styroCubes.gif" width="100" height="80">
+			<div class="dropdown-content">
+				<a href="aboutme.html" style="font-family:courier">About Me</a>
+				<a href="education.html" style="font-family:courier">Education</a>
+				<a href="projects.html" style="font-family:courier">Projects</a>
+			</div>
+		</div>
 	</head>
+
+
 	<body>
+		
 		
 		
 		<script src="three.js-master/build/three.js"></script>
@@ -29,7 +66,6 @@
 			document.body.appendChild(renderer.domElement);
 
 			//  CUBE!  /////////////
-			console.log("cubes are cute");
 			
 			function makeCube(color, x, y) {
 				const cubeGeometry = new THREE.BoxGeometry(1, 1, 1);
@@ -41,24 +77,89 @@
 				return cube;
 			}
 
+			function dirXOffset(initX, initY, destX, destY) {
+				const diffX = destX - initX;
+				const diffY = destY - initY;
+				const norm = Math.sqrt((diffX * diffX) + (diffY * diffY));
+				return diffX / norm;
+			}
 
-			const cubes = [makeCube(0xb0e8e8, 1, 0),
-			makeCube(0xb5e5bc, -3, 0),
+			function dirYOffset(initX, initY, destX, destY) {
+				const diffX = destX - initX;
+				const diffY = destY - initY;
+				const norm = Math.sqrt((diffX * diffX) + (diffY * diffY));
+				return diffY / norm;
+			}
+
+
 			
-			makeCube(0xe5d9b5, -1, 0), makeCube(0xe5c5b5, 3, 0),
-			makeCube(0xe5b5b5, 3, 2), makeCube(0xc9b5e5, 3, -2),
-			makeCube(0xc9b5e5, -1, 2), makeCube(0xb5e5bc, -1, -2),
-			makeCube(0xb0e8e8, 1, 2), makeCube(0xe5d9b5, 1, -2),
-			makeCube(0xe5c5b5, -3, 2), makeCube(0xe5b5b5, -3, -2)
+
+			const cubes = [
+
+			
+			makeCube(0xdb9c77, 0, 3), makeCube(0xa75037, 1, 3), makeCube(0x6f3b48, 2, 3),
+			makeCube(0xf3e4df, 0, 2), makeCube(0xf3e4df, 1, 2), makeCube(0x6f3b48, 2, 2),
+			makeCube(0xa75037, 0, 1), makeCube(0xdb9c77, 1, 1), makeCube(0x60958b, 2, 1),
+			makeCube(0x60958b, 0, 0), makeCube(0x1a1919, 1, 0), makeCube(0x1a1919, 2, 0),
+			
+		
+			makeCube(0x1a1919, -1, 3), makeCube(0x60958b, -2, 3),
+			makeCube(0xf3e4df, 0, -1), makeCube(0x6f3b48, 1, -1), makeCube(0x6f3b48, 2, -1),
+			makeCube(0xf3e4df, -2, 2), makeCube(0x60958b, -1, 2), makeCube(0x1a1919, -2, 1),
+			makeCube(0xa75037, -1, 1), makeCube(0xa75037, -2, 0), makeCube(0xdb9c77, -1, 0),
+			makeCube(0x1a1919, -2, -1), makeCube(0x60958b, -1, -1), makeCube(0xf3e4df, -2, -2),
+			makeCube(0xf3e4df, -1, -2), makeCube(0x60958b, 0, -2), makeCube(0x1a1919, 1, -2),
+			makeCube(0xdb9c77, 2, -2)
+
+		
 			];
+			
+
+			
+			const destinations = [
+
+			[-8, 4], [-8, 2], [-8, 0], [-8, -2], [-7, -2], [-7, 0], [-7, 2], [-7, 4],
+			[-5, -2], [-4, -2], [-2, -2], [-1, -2],
+
+			[1, 4], [1, 2], [1, 0], [1, -2], [2, -2], [2, 0], [2, 2], [2, 4],
+			[4, 1], [5, 1], [7, 4], [7, 2], [7, 0], [7, -2], [8, -2], [8, 0],
+			[8, 2], [8, 4]
+
+			];
+			
+			/*
+			const destinations = [
+
+			[-8, 3], [-8, 1], [-8, -1], [-8, -3], [-7, -3], [-7, -1], [-7, 1], [-7, 3],
+			[-5, -3], [-4, -3], [-2, -3], [-1, -3],
+
+			[1, 3], [1, 1], [1, -1], [1, -3], [2, -3], [2, -1], [2, 1], [2, 3],
+			[4, 0], [5, 0], [7, 3], [7, 1], [7, -1], [7, -3], [8, -3], [8, -1],
+			[8, 1], [8, 3]
+
+			];
+			*/
+			/*
+			const destinations = [
+
+			[-8, 3.5], [-8, 1.5], [-8, -0.5], [-8, -2.5], [-7, -2.5], [-7, -0.5], [-7, 1.5], [-7, 3.5],
+			[-5, -2.5], [-4, -2.5], [-2, -2.5], [-1, -2.5],
+
+			[1, 3.5], [1, 1.5], [1, -0.5], [1, -2.5], [2, -2.5], [2, -0.5], [2, 1.5], [2, 3.5],
+			[4, 0.5], [5, 0.5], [7, 3.5], [7, 1.5], [7, -0.5], [7, -2.5], [8, -2.5], [8, -0.5],
+			[8, 1.5], [8, 3.5]
+
+			];
+			*/
+
+
 
 			//Add Lighting
 			{
 			
 				const color = 0xFFFFFF;
-				const intensity = 0.6;
+				const intensity = 0.8;
 				const leftLight = new THREE.DirectionalLight(color, intensity);
-				//light.position.set(-1, 2, 4);
 				leftLight.position.set(-6, 6, 4);
 
 				const rightLight = new THREE.DirectionalLight(color, intensity);
@@ -68,195 +169,40 @@
 			}
 
 			camera.position.z = 12;
-			console.log(camera.position.x);
-			console.log(camera.position.y);
-
-
-			
-			// Line! //////////
-/*
-			const lineMaterial = new THREE.LineBasicMaterial( {
-				color: 0x000000
-			} );
-			const lineGeometry = new THREE.Geometry();
-			lineGeometry.vertices.push(new THREE.Vector3( -10, 0, 0) );
-			lineGeometry.vertices.push(new THREE.Vector3( 0, 10, 0) );
-			lineGeometry.vertices.push(new THREE.Vector3( 10, 0, 0) );
-			const line = new THREE.Line( lineGeometry, lineMaterial);
-
-			scene.add(line);
-
-
-			
-
-			// Load a Duck!
-
-			const loader = new THREE.GLTFLoader();
-
-			loader.load( '../three.js-master/examples/models/gltf/Duck/glTF/Duck.gltf', function ( gltf ) {
-
-						scene.add( gltf.scene );
-
-					}, undefined, function ( error ) {
-
-						console.error( error );
-
-					} );
-
-*/
-
 
 
 			function render(time) {
 				time *= 0.001; //convert to seconds
 
 				
-				cubes.forEach((cube, ndx) => {
-					const speed = 1 + ndx * 0.1;
-
-				// cube3 (3, 0) and cube10 (-3, 2) go to (-1, 4)
-					if (ndx == 10) {
-				
-						const dirX = 2/ Math.sqrt(6.25) ;
-						const dirY = 1.5 / Math.sqrt(6.25);
-
-						if (cube.position.x < -1.5) {
-							cube.position.x += dirX * 0.02;
-						}
-						if (cube.position.y < 4) {
-							cube.position.y += dirY * 0.02;
-						}
-					}
-
-					if (ndx == 3) {
-
-						const dirX = (-3.5) / Math.sqrt(28.25);
-						const dirY = 4/ Math.sqrt(28.25) ;
-
-						if (cube.position.x > -0.5) {
-							cube.position.x += dirX * 0.02;
-						}
-						if (cube.position.y < 4) {
-							cube.position.y += dirY * 0.02;
-						}
-					}
-				// cube11 and cube4 go to (-1, 2)
-					if (ndx == 11) {
-
-						const dirX = 1.5 / Math.sqrt(18.25);
-						const dirY = 4/ Math.sqrt(18.25);
-
-						if (cube.position.x < -1.5) {
-							cube.position.x += dirX * 0.02;
-						}
-						if (cube.position.y < 2) {
-							cube.position.y += dirY * 0.02;
-						}
-
-					}
-
-					if (ndx == 4) {
-
-						const dirX = -1;
-
-						if (cube.position.x > -0.5) {
-							cube.position.x += dirX * 0.02;
-						}
+				 cubes.forEach((cube, ndx) => {
 					
-					}
+					//const speed = 1 + ndx * 0.1;
+					const speed = 1 + ndx * 0.03;
 
-				//cube 6 goes to (4.5, -2)
-					if (ndx == 6) {
-						const dirX = 5.5/Math.sqrt(46.25) ;
-						const dirY = (-4) / Math.sqrt(46.25);
+					const dest = destinations[ndx];
+					
+				
+					const dirX = dirXOffset(cube.position.x, cube.position.y, dest[0], dest[1]);
+					const dirY = dirYOffset(cube.position.x, cube.position.y, dest[0], dest[1]);
 
-						if (cube.position.x < 4.5) {
-							cube.position.x += dirX * 0.02;
-						}
-						if (cube.position.y > -2) {
-							cube.position.y += dirY * 0.02;
-						}
+					if (Math.abs(cube.position.x - dest[0]) > 0.05) {
+						cube.position.x += dirX * 0.02;
 					}
-				//cube5 goes to (5.5, -2)
-					if (ndx == 5) {
-
-						const dirX = 1;
-						if (cube.position.x < 5.5) {
-							cube.position.x += dirX * 0.02;
-						}
-					}
-				//cube2 goes to (1.5, -2)
-					if (ndx == 2) {
-						const dirX = 2.5 / Math.sqrt(10.25) ;
-						const dirY = (-2) / Math.sqrt(10.25);
-
-						if (cube.position.x < 1.5) {
-							cube.position.x += dirX * 0.02;
-						}
-						if (cube.position.y > -2) {
-							cube.position.y += dirY * 0.02;
-						}
-					}
-				//cube9 goes to (2.5, -2)
-					if (ndx == 9) {
-
-						const dirX = 1.5;
-						if (cube.position.x < 2.5) {
-							cube.position.x += dirX * 0.02;
-						}
-					}
-				//cube1 goes to (-0.5, -2)
-					if (ndx == 1) {
-						const dirX = 2.5 / Math.sqrt(10.25) ;
-						const dirY = (-2) / Math.sqrt(10.25) ;
-
-						if (cube.position.x < -0.5) {
-							cube.position.x += dirX * 0.02;
-						}
-						if (cube.position.y > -2) {
-							cube.position.y += dirY * 0.02;
-						}
-
-					}
-
-				//cube7 goes to (-1.5, -2)
-					if (ndx == 7) {
-						const dirX = -1;
-						if (cube.position.x > -1.5) {
-							cube.position.x += dirX * 0.02;
-						}
-					}
-				//cube8 goes to (-1.5, 0) 
-					if (ndx == 8) {
-						const dirX = -2.5 / Math.sqrt(10.25);
-						const dirY = -2 / Math.sqrt(10.25);
-						if (cube.position.x > -1.5) {
-							cube.position.x += dirX * 0.02;
-						}
-						if (cube.position.y > 0) {
-							cube.position.y += dirY * 0.02;
-						}
-					}
-				//cube0 goes to (-0.5, 0)
-					if (ndx == 0) {
-						const dirX = -1;
-						if (cube.position.x > -0.5) {
-							cube.position.x += dirX * 0.02;
-						}
+					if (Math.abs(cube.position.y - dest[1]) > 0.05) {
+						cube.position.y += dirY * 0.02;
 					}
 				
+					
 
-
+		
 
 					
 					const rot = time*speed;
 					cube.rotation.x = rot;
 					cube.rotation.y = rot;
-					//cube.rotation.z = rot;
 
-					//cube.position.x += speed * 0.01;
-
-				})
+				}) 
 				
 
 
@@ -265,8 +211,7 @@
 			}
 			requestAnimationFrame(render);
 
-
-
 		</script>
+
 	</body>
 </html>

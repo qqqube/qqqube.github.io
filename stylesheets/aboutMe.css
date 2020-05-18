@@ -1,103 +1,78 @@
 
-/* CSS File for About Me Page */
 
-#menu {
-	text-align: center;
-}
-h1 {
-	text-align: center;
-	color: black;
-	font-style: italic;
-	font-weight: bold;
-	font-family: "Courier New", Courier, monospace;
-	font-size: 4em;
-}
-mark {
-	color: #d9b38c;
-	background-color: white;
-}
-mark .list{
-	color: black;
-	background-color: white;
-}
-h2 {
-	text-align: center;
-	color: black;
-	font-style: italic;
-	font-weight: bold;
-	font-family: "Courier New", Courier, monospace;
-	font-size: 3em;
-}
-#Teach {
-	margin-left: 15em;
-	margin-right: 33em;
-	font-family: "Courier New", Courier, monospace;
-}
-#cs61A {
-	float: right;
-	margin-right: 15em;
-}
-#intro {
-	margin-left: 15em;
-	margin-right: 15em;
-	font-family: "Courier New", Courier, monospace;
-}
-#ASUC {
-	float: left;
-	margin-left: 15em;
-}
-#ASUCP {
-	margin-right: 15em;
-	font-family: "Courier New", Courier, monospace;
-}
-#nycRin {
-	display: block;
+.line {
+	position: relative;
+	top: 50%;
+	width: 24em;
 	margin: 0 auto;
-	border-radius: 15px 50px 30px;
-}
-#Konviv {
-	float: right;
-	margin-right: 11em;
-}
-#KonvivTxt {
-	margin-left: 15em;
-	font-family: "Courier New", Courier, monospace;
-}
-ul {
-	display: inline-block;
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-}
-li a:link {
-	text-decoration-color: none;
-	font-weight: bold;
-	font-size: 1.5em;
-	color: black;
+	border-right: 2px solid rgba(255, 255, 255, 0.75);
+	font-size: 45px;
+	font-family: courier;
+	text-align: center;
+	white-space: nowrap;
+	overflow: hidden;
+	transform: translateY(-50%);
+
+
 }
 
-li a:visited{
-	text-decoration-color: none;
-	font-weight: bold;
-	font-size: 1.5em;
-	color: black;
+.paragraph1 {
+
+	font-size: 14px;
+	font-family: courier;
+	text-align: left;
+	margin-left: 60px;
+	margin-right: 60px;
+	color: #626362;
+
 }
-li a:hover {
-	text-decoration-color: none;
-	font-weight: bold;
-	font-size: 1.7em;
-	color: #660000;
+.paragraph2 {
+
+	font-size: 14px;
+	font-family: courier;
+	text-align: left;
+	margin-left: 60px;
+	margin-right: 60px;
+	color: #626362;
+
 }
-li a:active {
-	text-decoration-color: none;
-	font-weight: bold;
-	font-size: 1.5em;
-	color: black;
+
+.paragraph3 {
+	font-size: 14px;
+	font-family: courier;
+	text-align: left;
+	margin-left: 60px;
+	margin-right: 60px;
+	color: #626362;
 }
-li {
-	display: inline;
+
+.anim-typewriter {
+	animation: typewriter 4s steps(40) 1s 1 normal both,
+	blinkTextCursor 500ms steps(40) infinite normal;
 }
-a {
-	display: inline-block;
-	padding: 25px;
+
+
+
+
+
+
+@keyframes typewriter {
+	from {
+		width:0;
+	}
+	to {
+		width: 16em;
+	}
 }
+
+@keyframes blinkTextCursor {
+	from {
+		border-right-color: rgba(192,192,192,0.3);
+	}
+	to {
+		border-right-color: transparent;
+	}
+}
+
+
+

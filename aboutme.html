@@ -1,60 +1,80 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 	<head>
+		<meta charset=utf-8>
 		<title>Lauren Hong</title>
-		<link rel="stylesheet" href="stylesheets/aboutMe.css">	
 		<link rel="icon" href="images/icon.jpg" href="favicon.ico" />	
-	</head>
-	<body>
-		<div id="menu">
-			<ul>
-				<li><a href="index.html">Home</a></li>
-				<li><a href="aboutme.html">About Me</a></li>
-				<li><a href="contact.html">Contact</a></li>
-			</ul>
-		</div>
-		<h1> <mark>>>></mark> "Hello World!"</h1>
+		<link rel="stylesheet" href="stylesheets/aboutme.css">
+		
+		<style>
+			body { margin: 0; }
+			canvas { width: 100%; height: 100% }
 
-		<br/>
-		<img id="nycRin" src="images/nycRin.jpg" style="width:400px;height:400px;"></a></li>
-		<br/>
-		<br/>
-		<p id="intro"> I'm Lauren, a junior at UC Berkeley pursuing a degree in Computer Science from Huntington Beach, California. As an aspiring software engineer, I am particularly interested in artificial intelligence, machine learning, data analytics, and Blockchain technologies. When I'm not studying CS, I enjoy introspecting, going for a long run, binge-watching Korean dramas, jamming out to KPOP, and eating a shameful amount of good food [disclaimer: I don't do all these things simultaneously]. I'm constantly seeking opportunities to improve myself, and especially enjoy problem solving and tackling new challenges. </p>
-		<br/>
-		<h2> [<mark>Current Endeavors<mark/><mark class="list">]</mark></h2>
-		<br/>
-		<br/>
-		<a id="cs61A" href="https://cs61a.org/">
-			<img src="images/lambda.gif" top=5px>		
-		</a>
-		<p id="Teach"> While discovering my passion for technology at Berkeley, I also realized my love for teaching and became heavily involved in Computer Science education on campus. I'm currently a Course Tutor for CS61A, The Structure and Interpretation of Computer Programs, which covers various programming techniques in Python, SQL, and Scheme/Lisp. As a tutor, I instruct two sections per week building upon concepts taught in lecture, hold office hours, and grade projects and exams. In addition, I am a Junior Mentor in the Computer Science Mentors organization, which provides tutoring services for lower division EECS courses. </p>
-		<br/>
-		<br/>
-		<a id="ASUC" href="https://asuc.org/">
-			<img src="images/asuc.jpg" style="width:250px;height:250px"> </a>
-		<br/>
-		<br/>
-		<br/>
-		<br/>
-		<p id="ASUCP"> I currently serve as Director of Student Technology in the Associated Students of University of California, Berkeley, in which I manage several engineering interns and oversee the progress of ongoing technical projects. At the moment, we are working on building a centralized platform for EECS course resources as well as a comprehensive web application for all CS organizations.</p>
-		<br/>
-		<br/>
-		<br/>
-		<br/>
-		<br/>
-		<a id="Konviv" href="http://www.konviv.com/">
-			<img src="images/konviv.jpg" style="width:290px;height:290px"> </a>
-		<br/>
-		<br/>
-		<br/>
-		<br/>
-		<br/>
-		<br/>
-		<p id="KonvivTxt"> Outside of school, I am a Software Engineering Intern at Konviv, a startup sponsored by Berkeley Skydeck. Konviv is an artificially intelligent and data-driven money management application with a smart "bucketing system" that allows users to allocate money efficiently and spend within their budgets.</p>
-		<br/>
-		<br/>
-		<br/>
-		<br/>
-		<br/>	
+			.dropdown {
+			  position: relative;
+			  display: inline-block;
+			}
+			.dropdown-content {
+			  display: none;
+			  position: absolute;
+			  background-color: #ffffff;
+			  min-width: 160px;
+			  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+			  z-index: 1;
+			}
+			.dropdown-content a {
+			  color: black;
+			  padding: 8px 16px 8px 8px;
+			  text-decoration: none;
+			  display: block;
+			}
+
+			.dropdown-content a:hover {background-color: #ddd;}
+
+			.dropdown:hover .dropdown-content {display: block;}
+
+			.dropdown:hover .dropbtn {background-color: #3e8e41;}
+		</style>
+		<div class="dropdown" style="float:right">
+
+			<img border="0" src="images/styroCubes.gif" width="100" height="80">
+			<div class="dropdown-content">
+				<a href="index.html" style="font-family:courier">Home</a>
+				<a href="education.html" style="font-family:courier">Education</a>
+				<a href="projects.html" style="font-family:courier">Projects</a>
+			</div>
+		</div>
+	</head>
+
+
+    <body> <br><br><br><br><br><br><br>
+
+    	<p class="line anim-typewriter"> Hello World!</p><br><br>
+    	
+    	<p class="paragraph1">
+    		I'm Lauren, a coffee enthusiast from Huntington Beach,
+    		California currently pursuing degrees in Computer Science and Applied Mathematics from UC Berkeley. As an aspiring software engineer, I am particularly interested in Machine Learning, Data Science, and Computer Graphics. 
+    	</p><br>
+
+    	<p class="paragraph2">
+    		Having entered Berkeley without any programming experience, I definitely did not expect to pick up Computer Science as a major. During my freshman year, I decided to enroll in an introductory Data Science course that covered basic programming fundamentals and immediately became drawn to the world of technology, as well as Berkeley's unique structure of Computer Science education. Succeeding in my quest of declaring the major would not have been possible without the help and support of the instructors that I met along the way. My experience during my first few semesters encouraged me to become an instructor as well, in hopes of being able to inspire prospective software engineers as much as my former instructors had inspired me. During my undergraduate career, I served as a TA for one of the core Computer Sciences courses in the EECS curriculum, "Data Structures and Programming Methodology", for four semesters. Not only was this experience rewarding from the various interactions I had with my students, but it was also a great learning opportunity for me in that I was able to strengthen my debugging/development skills and additionally gain a deeper understanding of the conceptual details covered in the course. I believe my teaching experience will play an integral part in my future as an engineer, and will always be grateful for having been a part of Berkeley's instructional community. 
+
+    	</p> <br>
+
+  		<p class="paragraph3"> 
+  			Outside of academics, I enjoy introspecting, going for long runs, binge-watching Korean dramas, and jamming out on Spotify [disclaimer: I don't do all these things simultaneously]. I'm constantly seeking opportunities to improve myself and especially enjoy problem-solving and tackling new challenges, both technical and non-technical. 
+  		</p>
+
+
+
+
 	</body>
 </html>
+
+
+
+
+
+
+
+
