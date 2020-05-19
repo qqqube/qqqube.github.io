@@ -5,7 +5,11 @@
 		<title>Lauren Hong</title>
 		<link rel="icon" href="images/icon.jpg" href="favicon.ico" />	
 		<style>
-			body { margin: 0; }
+			body { 
+				margin: 0;
+				margin-left: 390px;
+				margin-right: 390px;
+				 }
 			canvas { width: 100%; height: 100% }
 			p {
 				text-align: center;
@@ -41,6 +45,76 @@
 				padding:0px 0px 0px 60px;
 				font-family:courier;
 			}
+			.line {
+			position: relative;
+			top: 50%;
+			width: 24em;
+			margin: 0 auto;
+			border-right: 2px solid rgba(255, 255, 255, 0.75);
+			font-size: 45px;
+			font-family: courier;
+			text-align: center;
+			white-space: nowrap;
+			overflow: hidden;
+			transform: translateY(-50%);
+
+
+		}
+			.anim-typewriter {
+			animation: typewriter 4s steps(40) 1s 1 normal both,
+			blinkTextCursor 500ms steps(40) infinite normal;
+		}
+
+
+
+
+
+
+		@keyframes typewriter {
+			from {
+				width:0;
+			}
+			to {
+				width: 16em;
+			}
+		}
+
+		@keyframes blinkTextCursor {
+			from {
+				border-right-color: rgba(192,192,192,0.3);
+			}
+			to {
+				border-right-color: transparent;
+			}
+		}
+
+			body { margin: 0; }
+			canvas { width: 100%; height: 100% }
+
+			.dropdown {
+			  position: relative;
+			  display: inline-block;
+			}
+			.dropdown-content {
+			  display: none;
+			  position: absolute;
+			  background-color: #ffffff;
+			  min-width: 160px;
+			  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+			  z-index: 1;
+			}
+			.dropdown-content a {
+			  color: black;
+			  padding: 8px 16px 8px 8px;
+			  text-decoration: none;
+			  display: block;
+			}
+
+			.dropdown-content a:hover {background-color: #ddd;}
+
+			.dropdown:hover .dropdown-content {display: block;}
+
+			.dropdown:hover .dropbtn {background-color: #3e8e41;}
 		</style>
 		<div class="dropdown" style="float:right">
 
@@ -54,8 +128,8 @@
 	</head>
 
 
-    <body><br><br><br>
-    <p >Education</p>
+    <body><br><br><br><br><br><br><br>
+    <p class="line anim-typewriter">Education</p><br><br>
     <img id="CS-IMG" src="images/cs-ed.png" style="float:left" width="710" height="450"><br>
 	<img id="MATH-IMG" src="images/math-ed.png" style="float:right" width="750" height="420" ><br><br><br><br><br><br><br><br>
 
