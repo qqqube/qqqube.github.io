@@ -3,7 +3,7 @@
 	<head>
 		<meta charset=utf-8>
 		<title>Lauren Hong</title>
-		<link rel="icon" href="images/icon.jpg" href="favicon.ico" />	
+		<link rel="icon" href="images/icon.jpg" href="favicon.ico" />
 		<style>
 			body { margin: 0; }
 			canvas { width: 100%; height: 100% }
@@ -35,7 +35,7 @@
 		</style>
 		<div class="dropdown" style="float:right">
 
-			<img border="0" src="images/styroCubes.gif" width="100" height="80">
+			<img border="0" src="images/nav.jpg" width="100" height="80">
 			<div class="dropdown-content">
 				<a href="aboutme.html" style="font-family:courier">About Me</a>
 				<a href="education.html" style="font-family:courier">Education</a>
@@ -46,14 +46,14 @@
 
 
 	<body>
-		
-		
-		
-		<script src="three.js-master/build/three.js"></script>
-		
-		<script> 
 
-			
+
+
+		<script src="three.js-master/build/three.js"></script>
+
+		<script>
+
+
 			const scene = new THREE.Scene();
 			const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 						// FOV (degrees), aspect ratio, near, far clipping planes
@@ -66,7 +66,7 @@
 			document.body.appendChild(renderer.domElement);
 
 			//  CUBE!  /////////////
-			
+
 			function makeCube(color, x, y) {
 				const cubeGeometry = new THREE.BoxGeometry(1, 1, 1);
 				const cubeMaterial = new THREE.MeshPhongMaterial({color: color});
@@ -92,17 +92,17 @@
 			}
 
 
-			
+
 
 			const cubes = [
 
-			
+
 			makeCube(0xdb9c77, 0, 3), makeCube(0xa75037, 1, 3), makeCube(0x6f3b48, 2, 3),
 			makeCube(0xf3e4df, 0, 2), makeCube(0xf3e4df, 1, 2), makeCube(0x6f3b48, 2, 2),
 			makeCube(0xa75037, 0, 1), makeCube(0xdb9c77, 1, 1), makeCube(0x60958b, 2, 1),
 			makeCube(0x60958b, 0, 0), makeCube(0x1a1919, 1, 0), makeCube(0x1a1919, 2, 0),
-			
-		
+
+
 			makeCube(0x1a1919, -1, 3), makeCube(0x60958b, -2, 3),
 			makeCube(0xf3e4df, 0, -1), makeCube(0x6f3b48, 1, -1), makeCube(0x6f3b48, 2, -1),
 			makeCube(0xf3e4df, -2, 2), makeCube(0x60958b, -1, 2), makeCube(0x1a1919, -2, 1),
@@ -111,11 +111,11 @@
 			makeCube(0xf3e4df, -1, -2), makeCube(0x60958b, 0, -2), makeCube(0x1a1919, 1, -2),
 			makeCube(0xdb9c77, 2, -2)
 
-		
-			];
-			
 
-			
+			];
+
+
+
 			const destinations = [
 
 			[-8, 4], [-8, 2], [-8, 0], [-8, -2], [-7, -2], [-7, 0], [-7, 2], [-7, 4],
@@ -126,7 +126,7 @@
 			[8, 2], [8, 4]
 
 			];
-			
+
 			/*
 			const destinations = [
 
@@ -156,7 +156,7 @@
 
 			//Add Lighting
 			{
-			
+
 				const color = 0xFFFFFF;
 				const intensity = 0.8;
 				const leftLight = new THREE.DirectionalLight(color, intensity);
@@ -174,15 +174,15 @@
 			function render(time) {
 				time *= 0.001; //convert to seconds
 
-				
+
 				 cubes.forEach((cube, ndx) => {
-					
+
 					//const speed = 1 + ndx * 0.1;
 					const speed = 1 + ndx * 0.03;
 
 					const dest = destinations[ndx];
-					
-				
+
+
 					const dirX = dirXOffset(cube.position.x, cube.position.y, dest[0], dest[1]);
 					const dirY = dirYOffset(cube.position.x, cube.position.y, dest[0], dest[1]);
 
@@ -192,18 +192,18 @@
 					if (Math.abs(cube.position.y - dest[1]) > 0.05) {
 						cube.position.y += dirY * 0.02;
 					}
-				
-					
 
-		
 
-					
+
+
+
+
 					const rot = time*speed;
 					cube.rotation.x = rot;
 					cube.rotation.y = rot;
 
-				}) 
-				
+				})
+
 
 
 				renderer.render(scene, camera);
