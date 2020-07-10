@@ -1,126 +1,164 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset=utf-8>
-		<title>Lauren Hong</title>
-		<link rel="icon" href="images/icon.jpg" href="favicon.ico" />
-		<style>
-			body { margin: 0;  }
-			canvas { width: 100%; height: 100% }
-
-			p {
-				text-align: center;
-				font-family: courier;
-				font-size: 45px;
-			}
-
-			.line {
-			position: relative;
-			top: 50%;
-			width: 24em;
-			margin: 0 auto;
-			border-right: 2px solid rgba(255, 255, 255, 0.75);
-			font-size: 45px;
-			font-family: courier;
-			text-align: center;
-			white-space: nowrap;
-			overflow: hidden;
-			transform: translateY(-50%);
-
-
-		}
-			.anim-typewriter {
-			animation: typewriter 4s steps(40) 1s 1 normal both,
-			blinkTextCursor 500ms steps(40) infinite normal;
-		}
-
-
-
-
-
-
-		@keyframes typewriter {
-			from {
-				width:0;
-			}
-			to {
-				width: 16em;
-			}
-		}
-
-		@keyframes blinkTextCursor {
-			from {
-				border-right-color: rgba(192,192,192,0.3);
-			}
-			to {
-				border-right-color: transparent;
-			}
-		}
-
-			.dropdown {
-			  position: relative;
-			  display: inline-block;
-			}
-			.dropdown-content {
-			  display: none;
-			  position: absolute;
-			  background-color: #ffffff;
-			  min-width: 160px;
-			  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-			  z-index: 1;
-			}
-			.dropdown-content a {
-			  color: black;
-			  padding: 8px 16px 8px 8px;
-			  text-decoration: none;
-			  display: block;
-			}
-
-			.dropdown-content a:hover {background-color: #ddd;}
-
-			.dropdown:hover .dropdown-content {display: block;}
-
-			.dropdown:hover .dropbtn {background-color: #3e8e41;}
-
-			p {
-				text-align: center;
-				font-family: courier;
-
-			}
-
-			.images {
-				text-align:center;
-			}
-
-
-
-
-		</style>
-		<div class="dropdown" style="float:right">
-
-			<img border="0" src="images/nav.jpg" width="100" height="80">
-			<div class="dropdown-content">
-				<a href="index.html" style="font-family:courier">Home</a>
-				<a href="aboutme.html" style="font-family:courier">About Me</a>
-				<a href="education.html" style="font-family:courier">Education</a>
-			</div>
-		</div>
+			<meta charset=utf-8>
+			<title>Lauren Hong</title>
+			<link rel="icon" href="images/icon.jpg" href="favicon.ico" />
+			<link rel="stylesheet" type="text/css" href="stylesheets/projects.css">
 	</head>
 
+	<body id="body">
+			<div id="navbar">
+						<div id="header">
+									<h1 class="name">
+											<div id="lauren" style="color:white;">Lauren</div>
+											<div id = "hong" style="color:white;">Hong</div>
+									</h1>
 
-    <body><br><br><br><br><br><br><br>
-    	<p > Projects</p><br>
-    	<div class="images">
-	    	<img src="images/proj1.png" width="900" height="550"><br>
-	    	<img src="images/proj2.png" width="900" height="570"><br>
-	    	<img src="images/proj3.png" width="900" height="500"><br>
-	    	<img src="images/proj4.png" width="900" height="440"><br>
-	    	<img src="images/proj5.png" width="900" height="460"><br>
-	    	<img src="images/proj6.png" width="900" height="380"><br><br>
-	    	<img src="images/proj7.png" width="900" height="350"><br>
-	    </div>
+									<p id="job-title" style="color:#C0C0C0">Software Engineer</p>
+									<div class="nav-links">
+												<p style="color:white;font-size:16px;">lauren [dot] hong [at] berkeley [dot] edu</p>
+
+												<a style="color:white;font-size:16px;" href="index.html">[about me]</a>
+												<a style="color:white;font-size:16px;" href="experience.html">[experience]</a>
+												<a style="color:white;font-size:16px;" href="https://github.com/qqqube">[github]</a>
+									</div>
+						</div>
+			</div>
+	</body><br>
+
+	<div id="projects">
+					<h1 id="projects-title">projects</h1><br><br><br><br><br>
+          <h3 id="dash">--------------------------------------------------------------------------------------------------------- </h3><br>
+          <div id="proj-category"><br>
+                <h3 id="category-title"> APIs</h3><br>
+                <div id="proj">
+                      <h4 id="proj-title">Transactions API</h4>
+                      <ul id="Description">
+                            <li>A Crud API implemented in Java using Spring Boot, MySQL, and JPA to model
+                            business transactions </li>
+                      </ul>
+                </div>
+                <div id="proj">
+                      <h4 id="proj-title">Appointments API </h4>
+                      <ul id="Description">
+                            <li>A Restful API implemented with Sails.js and PostgreSQL to model an appointment-booking system</li>
+                      </ul>
+                </div>
+          </div>
+
+					<div id="proj-category"><br>
+             <h3 id="category-title"> Web Applications</h3><br>
+									 <div id="proj">
+										  <h4 id="proj-title"> Pixelate </h4>
+											<ul id="description">
+													<li> Tools: Python [Flask, OpenCV], HTML/CSS, Docker, AWS Elastic Beanstalk </li>
+													<li> A web application written in Python Flask and deployed with Docker &
+														AWS Elastic Beanstalk that allows users to upload images and specify
+														granularity levels in order to obtain pixelated versions of their inputs.</li>
+											</ul>
+									 </div>
+									 <div id="proj">
+											<h4 id="proj-title"> Bearmaps </h4>
+											<ul id="Description">
+													<li> Tools: Java, Heroku, HTML/CSS, Javascript</li>
+													<li> A web mapping application for the UC Berkeley campus inspired by Google Maps </li>
+													<li> Features of the app include dragging/zooming, map rasterization,
+														the calculation of the shortest path between two points via the A* search algorithm,
+														and an auto-complete search bar </li>
+											</ul>
+									</div>
+                   <div id="proj">
+                       <h4 id="proj-title">Playlists</h4>
+                       <ul id="Description">
+                               <li>Tools: Ruby on Rails, Heroku, Javascript, HTML/CSS, SQL, SQLite</li>
+                               <li>A Ruby web application deployed on Heroku in which users can create
+                                 and add to private or shared playlists in real time  </li>
+                       </ul>
+                   </div>
+        					 <div id="proj">
+        							<h4 id="proj-title">2D Incompressible Fluid Rendering</h4>
+          							<ul id="Description">
+                              <li>Tools: Javascript, WebGL </li>
+          										<li>A Javascript program with an interactive user interface that allows users to control
+                                the initial velocity and density of the fluid rendering</li>
+          							</ul>
+        					 </div>
+
+          </div>
+
+					<div id="proj-category"><br>
+              <h3 id="category-title">Packages </h3><br>
+                  <div id="proj">
+                      <h4 id="proj-title">Gitlet</h4>
+                      <ul id="Description">
+                            <li>Tools: Java </li>
+                            <li>A version-control system that supports saving the contents of
+                            entire directories of files, restoring versions of one or more files or
+                            entire commits, viewing the history of users’ backups, maintaining branches
+                             of commits, and merging changes made in one branch into another </li>
+                      </ul>
+                  </div>
+                  <div id="proj">
+                      <h4 id="proj-title">Matrix Calculator</h4>
+                      <ul id="Description">
+                            <li>Tools: Javascript [node.js] </li>
+                            <li>A npm package that performs various matrix computations </li>
+                      </ul>
+                  </div>
+                  <div id="proj">
+                      <h4 id="proj-title">Permute</h4>
+                      <ul id="Description">
+                            <li> Tools: Python [Numpy, Scipy] </li>
+                            <li> In collaboration with the Berkeley Institute of Data Science,
+                              I implemented a permutations package which involved scripting
+                              nonparametric permutation test algorithms for various distributions
+                              and significance tests</li>
+                      </ul>
+                  </div>
+          </div>
 
 
 
-	</body>
+					<div id="proj-category"><br>
+							<h3 id="category-title"> ML Applications</h3><br>
+							<div id="proj">
+    						<h4 id="proj-title"> Banknotes Classifier </h4>
+                <ul id="Description">
+                  <li>Tools: Python [PyTorch, Numpy, Sklearn], Jupyter </li>
+                  <li>A neural network written in Python with Pytorch, Numpy, and Sklearn to authenticate banknote images  </li>
+                  <li>Features analyzed by the network include the variance, skewness, curtosis, and
+										entropy of each wavelet-transformed image </li>
+                </ul>
+              </div>
+              <div id="proj">
+    						<h4 id="proj-title"> Image Classification </h4>
+                <ul id="Description">
+                  <li>Tools: Python [Numpy, Scipy, Matplotlib, Pandas, Skimage, Sklearn], Jupyter </li>
+                  <li>A Python application that constructs various image classifiers [Logistic Regression
+                  with Lasso Regularization, K-Nearest Neighbors, Classification Trees, Random Forests,
+                  and Support Vector Machines] given a training data set that consists of images belonging to twenty different
+                  categories  </li>
+                  <li>Features analyzed by the classifiers include aspect ratio, various color channel
+                  representations (HSV, YCbCr), corner locations in the images (extracted using the
+                  Shi Tomasi Corner Detection Algorithm), horizontal gradients, and vertical gradients </li>
+                </ul>
+              </div>
+							<div id="proj">
+                <h4 id="proj-title"> Gibbs Sampling to Model a Wildfires Dataset </h4>
+      							<ul id="Description">
+                          <li>Tools: Python [Numpy, Matplotlib], Jupyter </li>
+                          <li>A Python application that tries to uncover the joint probability
+                          distributions between each pair of features using Gibbs Sampling, which
+                          generates samples from the provided conditional distributions</li>
+                          <li>After invoking Gibbs, MLE estimators
+                         of the multivariate gaussian parameters were calculated and additional
+                         burn-in time instantiations were tested to evaluate convergence
+                         of the generated Markov Chains</li>
+                    </ul>
+					    </div>
+          </div>
+
+	</div>
+
 </html>

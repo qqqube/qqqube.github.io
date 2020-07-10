@@ -1,0 +1,66 @@
+#body {
+  margin: 0 auto;
+
+}
+
+.name {
+  padding-top: 145px;
+  font-family:"Didot";
+  font-size:60px;
+
+}
+
+#navbar {
+  float: left;
+  width: 340px;
+  background-image: linear-gradient(to top right, black, #555555);
+  height:380vh;
+  overflow:visible;
+}
+
+#header {
+  float:right;
+  text-align: right;
+  padding-right:50px;
+}
+
+#job-title {
+  font-family:"Lucida Console";
+  font-size:23px;
+}
+
+#nav-links {
+  float:right;
+  padding-top: 230px;
+  text-align:right;
+  padding-left:60px;
+}
+
+#projects {
+  float:right
+  width: 700px;
+  padding-left:20px;
+  overflow:auto;
+}
+
+#proj-category {
+  float:left;
+  width: 660px;
+  padding-left:50px;
+}
+
+#proj {
+  float:left;
+  padding-left:30px;
+}
+
+#projects-title {
+  padding-top: 20px;
+  float:left;
+  padding-left:50px;
+  font-family:"Lucida Console";
+}
+
+#dash {
+  padding-left:50px;
+}

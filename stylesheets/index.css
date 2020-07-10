@@ -1,0 +1,62 @@
+
+#body {
+  margin: 0 auto;
+
+}
+
+.name {
+  padding-top: 145px;
+  font-family:"Didot";
+  font-size:60px;
+
+}
+
+#navbar {
+  float: left;
+  width: 340px;
+  background-image: linear-gradient(to top right, black, #555555);
+  height:150vh;
+}
+
+#header {
+  float:right;
+  text-align: right;
+  padding-right:50px;
+}
+
+#job-title {
+  font-family:"Lucida Console";
+  font-size:23px;
+}
+
+#nav-links {
+  float:right;
+  padding-top: 230px;
+  text-align:right;
+  padding-left:60px;
+}
+
+.pp-container img {
+  width:220px;
+  height:268px;
+  padding-top:40px;
+  padding-right:100px;
+  float:right;
+}
+#aboutme {
+  float:right
+  width: 450px;
+}
+
+#aboutme-text {
+  float:left;
+  width: 400px;
+  padding-left:50px;
+}
+
+#aboutme-title {
+  padding-top: 20px;
+  float:left;
+  padding-left:50px;
+  font-family:"Lucida Console";
+}

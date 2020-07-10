@@ -1,217 +1,50 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset=utf-8>
-		<title>Lauren Hong</title>
-		<link rel="icon" href="images/icon.jpg" href="favicon.ico" />
-		<style>
-			body { margin: 0; }
-			canvas { width: 100%; height: 100% }
-
-			.dropdown {
-			  position: relative;
-			  display: inline-block;
-			}
-			.dropdown-content {
-			  display: none;
-			  position: absolute;
-			  background-color: #ffffff;
-			  min-width: 160px;
-			  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-			  z-index: 1;
-			}
-			.dropdown-content a {
-			  color: black;
-			  padding: 8px 16px 8px 8px;
-			  text-decoration: none;
-			  display: block;
-			}
-
-			.dropdown-content a:hover {background-color: #ddd;}
-
-			.dropdown:hover .dropdown-content {display: block;}
-
-			.dropdown:hover .dropbtn {background-color: #3e8e41;}
-		</style>
-		<div class="dropdown" style="float:right">
-
-			<img border="0" src="images/nav.jpg" width="100" height="80">
-			<div class="dropdown-content">
-				<a href="aboutme.html" style="font-family:courier">About Me</a>
-				<a href="education.html" style="font-family:courier">Education</a>
-				<a href="projects.html" style="font-family:courier">Projects</a>
-			</div>
-		</div>
+			<meta charset=utf-8>
+			<title>Lauren Hong</title>
+			<link rel="icon" href="images/icon.jpg" href="favicon.ico" />
+			<link rel="stylesheet" type="text/css" href="stylesheets/index.css">
 	</head>
 
+	<body id="body">
+			<div id="navbar">
+						<div id="header">
+									<h1 class="name">
+											<div id="lauren" style="color:white;">Lauren</div>
+											<div id = "hong" style="color:white;">Hong</div>
+									</h1>
 
-	<body>
+									<p id="job-title" style="color:#C0C0C0">Software Engineer</p>
+									<div class="nav-links">
+												<p style="color:white;font-size:16px;">lauren [dot] hong [at] berkeley [dot] edu</p>
 
-
-
-		<script src="three.js-master/build/three.js"></script>
-
-		<script>
-
-
-			const scene = new THREE.Scene();
-			const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000 );
-						// FOV (degrees), aspect ratio, near, far clipping planes
-
-			const canvas = document.createElement( 'canvas' );
-			const context = canvas.getContext( 'webgl2' );
-			const renderer = new THREE.WebGLRenderer( { canvas: canvas, context: context } );
-
-			renderer.setSize( window.innerWidth, window.innerHeight);
-			document.body.appendChild(renderer.domElement);
-
-			//  CUBE!  /////////////
-
-			function makeCube(color, x, y) {
-				const cubeGeometry = new THREE.BoxGeometry(1, 1, 1);
-				const cubeMaterial = new THREE.MeshPhongMaterial({color: color});
-				const cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
-				cube.position.x = x;
-				cube.position.y = y;
-				scene.add(cube);
-				return cube;
-			}
-
-			function dirXOffset(initX, initY, destX, destY) {
-				const diffX = destX - initX;
-				const diffY = destY - initY;
-				const norm = Math.sqrt((diffX * diffX) + (diffY * diffY));
-				return diffX / norm;
-			}
-
-			function dirYOffset(initX, initY, destX, destY) {
-				const diffX = destX - initX;
-				const diffY = destY - initY;
-				const norm = Math.sqrt((diffX * diffX) + (diffY * diffY));
-				return diffY / norm;
-			}
+												<a style="color:white;font-size:16px;" href="experience.html">[work experience]</a>
+												<a style="color:white;font-size:16px;" href="projects.html">[projects]</a>
+												<a style="color:white;font-size:16px;" href="https://github.com/qqqube">[github]</a>
+									</div>
+						</div>
+			</div><br><br><br>
+			<div id="aboutme">
+							<h1 id="aboutme-title">about me</h1><br><br><br><br><br><br><br><br>
+							<div id="aboutme-text">
+									<p id="intro1"> I am a fourth year undergraduate at UC Berkeley double majoring in
+										Computer Science and Applied Mathematics. From four years of programming, I am well-versed
+										in Python, Java, SQL, Scheme, Javascript [Node.js], HTML/CSS, C++/C, Ruby on Rails, Golang,
+										and Matlab. Additionally, I have extensive experience with building APIs that interact
+										with database technologies such as MySQL and PostgreSQL,
+										writing programs to analyze large datasets using various Data Science libraries in Python such as
+										Pytorch, Numpy, OpenCV, and Pandas, and
+										implementing/deploying web applications with tools such as Docker, Heroku, and AWS Elastic Beanstalk.
+									</p><br>
+									<p id="intro2">I am currently recruiting for Sofware Engineering positions. Please do not hesitate to shoot me an email
+									if you know of any suitable opportunities! </p>
+							</div>
+							<div class="pp-container">
+										<img src="images/pixelated.png" ALIGN="right">
+							</div><br>
 
 
-
-
-			const cubes = [
-
-
-			makeCube(0xdb9c77, 0, 3), makeCube(0xa75037, 1, 3), makeCube(0x6f3b48, 2, 3),
-			makeCube(0xf3e4df, 0, 2), makeCube(0xf3e4df, 1, 2), makeCube(0x6f3b48, 2, 2),
-			makeCube(0xa75037, 0, 1), makeCube(0xdb9c77, 1, 1), makeCube(0x60958b, 2, 1),
-			makeCube(0x60958b, 0, 0), makeCube(0x1a1919, 1, 0), makeCube(0x1a1919, 2, 0),
-
-
-			makeCube(0x1a1919, -1, 3), makeCube(0x60958b, -2, 3),
-			makeCube(0xf3e4df, 0, -1), makeCube(0x6f3b48, 1, -1), makeCube(0x6f3b48, 2, -1),
-			makeCube(0xf3e4df, -2, 2), makeCube(0x60958b, -1, 2), makeCube(0x1a1919, -2, 1),
-			makeCube(0xa75037, -1, 1), makeCube(0xa75037, -2, 0), makeCube(0xdb9c77, -1, 0),
-			makeCube(0x1a1919, -2, -1), makeCube(0x60958b, -1, -1), makeCube(0xf3e4df, -2, -2),
-			makeCube(0xf3e4df, -1, -2), makeCube(0x60958b, 0, -2), makeCube(0x1a1919, 1, -2),
-			makeCube(0xdb9c77, 2, -2)
-
-
-			];
-
-
-
-			const destinations = [
-
-			[-8, 4], [-8, 2], [-8, 0], [-8, -2], [-7, -2], [-7, 0], [-7, 2], [-7, 4],
-			[-5, -2], [-4, -2], [-2, -2], [-1, -2],
-
-			[1, 4], [1, 2], [1, 0], [1, -2], [2, -2], [2, 0], [2, 2], [2, 4],
-			[4, 1], [5, 1], [7, 4], [7, 2], [7, 0], [7, -2], [8, -2], [8, 0],
-			[8, 2], [8, 4]
-
-			];
-
-			/*
-			const destinations = [
-
-			[-8, 3], [-8, 1], [-8, -1], [-8, -3], [-7, -3], [-7, -1], [-7, 1], [-7, 3],
-			[-5, -3], [-4, -3], [-2, -3], [-1, -3],
-
-			[1, 3], [1, 1], [1, -1], [1, -3], [2, -3], [2, -1], [2, 1], [2, 3],
-			[4, 0], [5, 0], [7, 3], [7, 1], [7, -1], [7, -3], [8, -3], [8, -1],
-			[8, 1], [8, 3]
-
-			];
-			*/
-			/*
-			const destinations = [
-
-			[-8, 3.5], [-8, 1.5], [-8, -0.5], [-8, -2.5], [-7, -2.5], [-7, -0.5], [-7, 1.5], [-7, 3.5],
-			[-5, -2.5], [-4, -2.5], [-2, -2.5], [-1, -2.5],
-
-			[1, 3.5], [1, 1.5], [1, -0.5], [1, -2.5], [2, -2.5], [2, -0.5], [2, 1.5], [2, 3.5],
-			[4, 0.5], [5, 0.5], [7, 3.5], [7, 1.5], [7, -0.5], [7, -2.5], [8, -2.5], [8, -0.5],
-			[8, 1.5], [8, 3.5]
-
-			];
-			*/
-
-
-
-			//Add Lighting
-			{
-
-				const color = 0xFFFFFF;
-				const intensity = 0.8;
-				const leftLight = new THREE.DirectionalLight(color, intensity);
-				leftLight.position.set(-6, 6, 4);
-
-				const rightLight = new THREE.DirectionalLight(color, intensity);
-				rightLight.position.set(6, 6, 4);
-				scene.add(leftLight);
-				scene.add(rightLight);
-			}
-
-			camera.position.z = 12;
-
-
-			function render(time) {
-				time *= 0.001; //convert to seconds
-
-
-				 cubes.forEach((cube, ndx) => {
-
-					//const speed = 1 + ndx * 0.1;
-					const speed = 1 + ndx * 0.03;
-
-					const dest = destinations[ndx];
-
-
-					const dirX = dirXOffset(cube.position.x, cube.position.y, dest[0], dest[1]);
-					const dirY = dirYOffset(cube.position.x, cube.position.y, dest[0], dest[1]);
-
-					if (Math.abs(cube.position.x - dest[0]) > 0.05) {
-						cube.position.x += dirX * 0.02;
-					}
-					if (Math.abs(cube.position.y - dest[1]) > 0.05) {
-						cube.position.y += dirY * 0.02;
-					}
-
-
-
-
-
-
-					const rot = time*speed;
-					cube.rotation.x = rot;
-					cube.rotation.y = rot;
-
-				})
-
-
-
-				renderer.render(scene, camera);
-				requestAnimationFrame( render);
-			}
-			requestAnimationFrame(render);
-
-		</script>
-
+			</div>
 	</body>
 </html>
