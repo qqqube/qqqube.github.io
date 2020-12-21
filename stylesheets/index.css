@@ -12,6 +12,7 @@
 }
 
 #navbar {
+  position:relative;
   float: left;
   width: 340px;
   background-image: linear-gradient(to top right, black, #555555);
@@ -37,26 +38,20 @@
 }
 
 .pp-container img {
-  width:220px;
-  height:268px;
-  padding-top:40px;
-  padding-right:100px;
-  float:right;
+  position:absolute;
+  padding-left:550px;
 }
-#aboutme {
-  float:right
-  width: 450px;
-}
+
+
+
 
 #aboutme-text {
-  float:left;
-  width: 400px;
-  padding-left:50px;
+  position: relative;
+  float: left;
+  padding-left: 50px;
+  width: 420px;
+  font-size:20px;
+
 }
 
-#aboutme-title {
-  padding-top: 20px;
-  float:left;
-  padding-left:50px;
-  font-family:"Lucida Console";
-}
+
