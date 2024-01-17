@@ -13,12 +13,12 @@ Hello, my name is Lauren! I am currently a visiting researcher in the Algorithmi
 
 Before that, I was a Master's student at Columbia University, where I had the opportunity to work with [Junfeng Yang](https://www.cs.columbia.edu/~junfeng/) and [Asaf Cidon](https://www.asafcidon.com/). I received my Bachelor's degrees in Computer Science and Applied Mathematics from UC Berkeley.
 
+---
+# News  
 
-## News 📅 
+**<span style="color:#c9a838;">January 2024:</span>** *ToolLLM: Facilitating Large Language Models to Master 16000+ Real-World APIs* has been **accepted to ICLR 2024** as a **spotlight**! [[paper](https://arxiv.org/pdf/2307.16789.pdf?trk=public_post_comment-text), [code](https://github.com/OpenBMB/ToolBench)]
 
-**[September 2023]** [Fewer is More: Trojan Attacks on Parameter-Efficient Fine-Tuning](https://arxiv.org/pdf/2310.00648.pdf) is now on arXiv!
+**<span style="color:#c9a838;">September 2023:</span>** *Fewer is More: Trojan Attacks on Parameter-Efficient Fine-Tuning* is now on arXiv! [[paper](https://arxiv.org/pdf/2310.00648.pdf)]
 
-**[September 2023]** [ToolLLM: Facilitating Large Language Models to Master 16000+ Real-World APIs](https://arxiv.org/pdf/2307.16789.pdf?trk=public_post_comment-text) is now on arXiv!
-
-**[May 2023]** [Nazar: Monitoring and Adapting ML Models on Mobile Devices](https://arxiv.org/pdf/2305.07772.pdf) is now on arXiv!
+**<span style="color:#c9a838;">May 2023:</span>** *Nazar: Monitoring and Adapting ML Models on Mobile Devices* is now on arXiv! [[paper](https://arxiv.org/pdf/2305.07772.pdf)]
 
