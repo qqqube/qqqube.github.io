@@ -11,7 +11,7 @@ redirect_from:
 Hello, my name is Lauren! I am currently a visiting researcher in the Algorithmic Learning, Privacy, and Security (ALPS) Lab at Stony Brook University, advised by [Ting Wang](https://alps-lab.github.io/). I am also working with the NLP group at Tsinghua University under the supervision of [Zhiyuan Liu](https://nlp.csai.tsinghua.edu.cn/~lzy/). My research interests lie primarily in improving the trustworthiness of NLP systems and addressing issues of security, accountability, and safety that are associated with large language models.
 
 
-Before this, I was a Master's student at Columbia University, where I had the opportunity to work with [Junfeng Yang](https://www.cs.columbia.edu/~junfeng/) and [Asaf Cidon](https://www.asafcidon.com/). I received my Bachelor's degrees in Computer Science and Applied Mathematics from UC Berkeley.
+Before this, I was a Master's student at Columbia University, where I had the opportunity to work with [Junfeng Yang](https://www.cs.columbia.edu/~junfeng/) and [Asaf Cidon](https://www.asafcidon.com/). I also received my Bachelor's degrees in Computer Science and Applied Mathematics from UC Berkeley.
 
 ---
 # News  
