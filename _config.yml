@@ -82,12 +82,12 @@ analytics:
 author:
   name             : "Spencer Hong"
   avatar           : "profile.jpg"
-  bio              : "M.S. in Computer Science at Columbia University"
-  location         : "New York, NY"
+  bio              : "PhD in Computer Science at NUS"
+  location         : 
   employer         :
   pubmed           : 
   googlescholar    :
-  email            : "lauren.hong@columbia.edu"
+  email            : "spencer.hong@u.nus.edu"
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
   bitbucket        :
